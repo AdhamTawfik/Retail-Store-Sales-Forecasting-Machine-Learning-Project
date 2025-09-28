@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Data and models
+data/raw/
+data/*.csv
+models/
+mlruns/
+
+# Environment
+env/
+venv/
+# Ignore data and MLflow artifacts
+data/raw/
+mlruns/
+models/
+*.pyc
+__pycache__/
+.env
