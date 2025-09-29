@@ -24,6 +24,6 @@ Both scripts log parameters, metrics, and artifacts to MLflow (local `mlruns/` b
 
 - Random seeds are set in code for reproducibility. See `src/utils.py`.
 - Large raw data is not committed. See `data/README.md` for download instructions.
-- AI assistance: small snippets and guidance were used from public resources and private AI tools. All code is written/assembled here in the project.
+- AI assistance: small snippets and guidance were used from public resources and private AI tools. All code is written here in the project.
 # Retail-Store-Sales-Forecasting-Machine-Learning-Project
 A ML project to predict retail sales from a dataset of a store's sales. Dataset taken from kaggle. Project done for the UPEI Machine Learning, Data Mining (CS-4120-01) course.
