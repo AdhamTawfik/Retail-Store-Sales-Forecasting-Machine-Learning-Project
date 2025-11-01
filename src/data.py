@@ -5,8 +5,17 @@ from .utils import set_seed
 
 
 def load_data(path: str) -> pd.DataFrame:
-    """Load CSV from data/raw directory. Expects a train.csv with date and sales columns."""
-    df = pd.read_csv(path, parse_dates=["date"]) if os.path.exists(path) else pd.DataFrame()
+    # Load CSV from data/raw directory. Expects a train.csv with date and sales columns.
+    # Try sample first for faster processing, fall back to full data
+    sample_path = path.replace('train.csv', 'train_sample.csv')
+    if os.path.exists(sample_path):
+        df = pd.read_csv(sample_path, parse_dates=["date"])
+        print(f"Using sampled data: {len(df):,} rows (for faster processing)")
+    elif os.path.exists(path):
+        df = pd.read_csv(path, parse_dates=["date"])
+        print(f"Using full data: {len(df):,} rows")
+    else:
+        df = pd.DataFrame()
     return df
 
 
